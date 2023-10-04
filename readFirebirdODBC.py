@@ -10,13 +10,14 @@ str_dt2 = input("Конечная  дата:")
 # Variant 1
 #conn = db.connect(r"Dsn=IA3; Driver={Firebird/InterBase(r) driver}; \
 #                  client=C:\Program Files\Firebird3x64\fbclient.dll") \
-                   UID=SYSDBA; \
-                   PWD=masterkey;")
+#                  UID=SYSDBA; \
+#                  PWD=masterkey;")
 
 # Variant 2
 conn = db.connect(r"Driver={Firebird/InterBase(r) driver}; \
                     DBNAME=D:\IADB\IApteka.fdb;
-                  client=C:\Program Files\Firebird3x64\fbclient.dll")
+                    Client=C:\Program Files\Firebird3x64\fbclient.dll;
+                    UID=SYSDBA; PWD=masterkey;")
 
 
 cursor = conn.cursor()
