@@ -1,23 +1,24 @@
 import pyodbc as db
-server   = 'Server2019/3052'      # 'port:server.base.sql'
-bddata   = 'D:\IADb\IAPTEKA.FDB'  # 'mybd' 
-user     = 'SYSDBA'
-password = 'masterkey'
 
 str_dt1 = input("Начальная дата:") 
 str_dt2 = input("Конечная  дата:") 
 
 # Variant 1
-#conn = db.connect(r"Dsn=IA3; Driver={Firebird/InterBase(r) driver}; \
-#                  client=C:\Program Files\Firebird3x64\fbclient.dll") \
-#                  UID=SYSDBA; \
-#                  PWD=masterkey;")
+#conn = db.connect(r"Dsn=IA3;")
 
 # Variant 2
 conn = db.connect(r"Driver={Firebird/InterBase(r) driver}; \
                     DBNAME=D:\IADB\IApteka.fdb;
                     Client=C:\Program Files\Firebird3x64\fbclient.dll;
                     UID=SYSDBA; PWD=masterkey;")
+
+
+# Variant 3
+#conn = db.connect(r"Driver={Firebird/InterBase(r) driver}; \
+#                    DBNAME=84.42.52.49/3052:D:\IADB\IApteka.fdb; 
+#                    Client=C:\Program Files\FirebirdIA3x64\fbclient.dll; 
+#                    UID=SYSDBA; PWD=masterkey;")
+
 
 
 cursor = conn.cursor()
